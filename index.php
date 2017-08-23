@@ -2,10 +2,31 @@
 include_once("templates/header.php");
 include_once("templates/slider.php");
 
-$sql = "SELECT * FROM tbl_user";
-$query = query($sql,$conn);
+?>
+<table class="table table-hover">
+	<thead>
+		<tr>
+	    	<th>Id</th>
+	      <th>UserCode</th>
+	      <th>UserCreate</th>
+	  </tr>
+	</thead>
 
- ?>
+<?php
+    $sql = "SELECT * FROM tbl_user";
+    $query = query($sql,$conn);
+  while($row=fetch_assoc($query)) {
+		echo "<tbody>";
+    	echo "<tr>";
+      	echo "<th scope='row'>".$row["user_id"]."</th>";
+      	echo "<td>".$row["userCode"]."</td>";
+      	echo "<td>".$row["user_crea"]."</td>";
+    	echo "</tr>";
+  	echo "</tbody>";
+	}
+	?>
+</table>
+
 
               <div class="row">
                 <div class="col-sm-6 col-md-4">

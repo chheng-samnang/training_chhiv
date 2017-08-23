@@ -21,6 +21,7 @@ function query($sql,$conn)
 
 function fetch_assoc($query)
 {
-  return mysqli_fetch_assoc($query);
+  $result = mysqli_fetch_assoc($query);
+  return $result;
 }
  ?>
